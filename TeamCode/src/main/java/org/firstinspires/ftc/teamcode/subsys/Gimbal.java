@@ -13,7 +13,7 @@ public class Gimbal {
                                   double istop,
                                   double ostart,
                                   double ostop) {
-        return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+        return (float) (ostart + (ostop - ostart) * ((value - istart) / (istop - istart)));
     }
 
     public void trackTag(double bearing, double elevation){
