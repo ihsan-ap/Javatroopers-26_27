@@ -3,10 +3,11 @@ package org.firstinspires.ftc.teamcode.subsys;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 
 import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.hardware.Servo;
 
 public class Gimbal {
     CRServo YServo = hardwareMap.get(CRServo.class, "Servo1");
-    CRServo ZServo = hardwareMap.get(CRServo.class, "Servo2");
+    Servo ZServo = hardwareMap.get(Servo.class, "Servo2");
 
     static public final float map(double value,
                                   double istart,
@@ -21,7 +22,7 @@ public class Gimbal {
         boolean negativeElevation = (elevation < 0);
 
         YServo.setPower(map(bearing, 0, 360.0, 0, 1.0));
-        ZServo.setPower(map(elevation, 0, 360.0, 0, 1.0));
+        ZServo.setPosition(map(elevation, 0, 180.0, 0, 1.0));
 
         // add failsafes if... fail duh. maybe
     }

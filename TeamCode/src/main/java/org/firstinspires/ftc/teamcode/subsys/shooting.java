@@ -9,4 +9,8 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class shooting {
     DcMotorEx feeder = hardwareMap.get(DcMotorEx.class, "feeder");
     DcMotorEx shooter = hardwareMap.get(DcMotorEx.class, "shoot");
+
+    void autoShoot () {
+
+    }
 }
